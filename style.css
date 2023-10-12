@@ -35,6 +35,46 @@ body {
     background-color: gainsboro;
     color: #045b68;
 }
+
+#menu-page {
+    overflow: hidden;
+    transition: all 1.2s;
+    z-index: 119;
+    background-color: #000000;
+    color: white;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: -100%;
+    display: flex;
+    align-items: center;
+    padding: 2vw;
+
+}
+
+
+#navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    color: white;
+    font-family: dinamo;
+    padding: 1vw;
+}
+#navbar i{
+    font-size: 2vw;
+    font-weight: 900;
+    margin-top: -1vw;
+
+}
+#navbar h1{
+    text-transform: uppercase;
+    font-size: 4vw;
+}
 .cursor{
     z-index: 994;
     position: fixed;

@@ -30,6 +30,35 @@ ScrollTrigger.refresh();
 
 
 
+
+//------------------MENU-----------------------
+
+var menu = document.querySelector(".menu")
+var menubar = document.querySelector("#menu-page")
+var count = 0
+menu.addEventListener("click", function () {
+    if (count == 0) {
+        menubar.style.top = "0%"
+        count = 1
+        menu.innerHTML = `<i class="ri-close-line"></i>`
+      
+    }
+    else {
+        count = 0
+        menubar.style.top = "-100%"
+        menu.innerHTML = `<i class="ri-menu-fill"></i>`
+
+
+        
+    }
+})
+
+
+
+
+
+
+
 var c = document.querySelector(".cursor")
 
 document.querySelectorAll(".agencies").forEach(function(e){
