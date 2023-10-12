@@ -233,16 +233,27 @@ var ft =gsap.timeline(
   {
     scrollTrigger: {
       scroller: "#main",
-      trigger: "#footer",
-      start: "top 0%",
+      trigger: "#p5-c-child",
+      start: "top 50%",
+      end:"top 36%",
       scrub: 1,
-      // markers:true
+      // markers:true,
+      duration:5,
     }
   }
 )
 ft
-.to("#p5-c", {
-  top: "-101%"
+.to("#p5-c-child", {
+  top: "0%"
 })
+
+
+
+
+
+
+
+
+
 
 

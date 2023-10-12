@@ -36,7 +36,7 @@ body {
     color: #045b68;
 }
 .cursor{
-    z-index: 9999;
+    z-index: 994;
     position: fixed;
     height: 17vw;
     width: 25vw;
@@ -190,7 +190,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     gap: 15vw;
-    transition: border-radius linear .5s;
+    transition: border-radius linear .2s;
 }
 .circle .text{
     text-align: center;
@@ -214,43 +214,14 @@ body {
     height: 100%;
     object-fit: cover;
 }
-.same-row{
-    width: 100vw;
-    display: flex;
-    padding: 0 3vw;
-    gap: 3vw;
-    justify-content: space-between;
-}
-.box{
-    overflow: hidden;
-    border-radius: 20px;
-    background-color: lightgray;
-}
-#box1{
-    aspect-ratio: 1/1;
-    width: 31%;
-    background-color: lightgray;
-}
-#box2{
-    width: 63vw;
-    height: 29vw;
-}
-#box3{
-    width: 45vw;
-    height: 50vw;
-}
-#box4{
-    width: 40vw;
-    height: 20vw;
-}
-#box5{
-    width: 40vw;
-    height: 20vw;
-}
 #page3 img{
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity linear .2s;
 }
 #page3 {
     padding: 4vw 2.5vw;
@@ -263,6 +234,7 @@ body {
     gap: 3vw;
 }
 .row{
+    position: relative;
     overflow: hidden;
     width: 100%;
     display: flex;
@@ -270,6 +242,7 @@ body {
 }
 #row1{
     height: 50vw;
+    
 }
 #row2{
     padding: 0;
@@ -277,9 +250,11 @@ body {
     justify-content: space-between;
 }
 #page3 #row1 .r1box{
+    position: relative;
     height: 100%;
     width: 50%;
     overflow: hidden;
+
 }
 
 #page3 #row1 #r1box1{
@@ -291,11 +266,57 @@ body {
     gap: 3vw;
 }
 #page3 #row1 #r1box2 .r1box2-box{
+    position: relative;
     overflow: hidden;
     width: 100%;
     height: 50%;
     border-radius: 20px;
 }
+.same-row{
+    width: 100vw;
+    display: flex;
+    padding: 0 3vw;
+    gap: 3vw;
+    justify-content: space-between;
+}
+.box{
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+.box video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.box img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: opacity linear .2s;
+}
+.box:hover img{
+    opacity: 0;
+}
+#page3 .row #r1box1:hover img{
+    opacity: 0;
+}
+#page3 #row2 .box:hover img{
+    opacity: 0;
+}
+#page3 .row #r1box2 .r1box2-box:hover img{
+    opacity: 0;
+}
+.b1{
+    aspect-ratio: 1/1;
+    width: 31%;
+}
+.b2{
+    width: 63vw;
+    height: 29vw;
+}
+
+
 #svg {
     background-color: black;
     padding: 20vw 0;
@@ -395,7 +416,7 @@ body {
 }
 #page5{
     background-color: white;
-    height: 60vw;
+    height:100vh;
     width: 100%;
     display: flex;
     padding-left: 3vw;
@@ -430,7 +451,7 @@ body {
     justify-content: space-between;
     padding: 6vw 4vw;
     width: 100%;
-    height: 60vw;
+    height: 100%;
     background-color: #fff;
     border-radius: 20px;
 }
@@ -450,6 +471,22 @@ body {
     text-transform: uppercase;
     font-size: 1vw;
     font-family: dm;
+    margin-left: .2vw;
+
+
+}
+#main button{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow ease .5s;
+
+}
+
+#main button:hover{
+    box-shadow: 2px 2px 10px 2px;
+    box-shadow: 1px 1px 2px 2px;
+
 }
 #p5-a{
     background-color: #f4efe7;
@@ -463,8 +500,13 @@ body {
 #p5-c{
     background-color: #3630aa;
     color: white;
-    height: 60vw;
+    height:110%;
     z-index: 40;
+}
+#p5-c button{
+    border: 2px solid #ffffff;
+    color: white;
+
 }
 #p5-c>h2{
     text-transform: uppercase;
@@ -533,19 +575,34 @@ body {
     gap: 4vw;
 }
 .agencies {
-    padding: 4vw;
+    width: 23vw;
+    padding: 2vw;
     cursor: pointer;
+    position: relative;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 .agencies h2{
+    margin-bottom: 1vw;
     font-size: 3vw;
     text-transform: uppercase;
     font-family: dinamo;
 
 }
+
 .agencies>p{
     font-family: dm;
-    margin: 1vw;
+    margin-bottom: 1vw;
     font-size: 1vw;
+    overflow: hidden;
+    text-align: left;
+}
+.agencies:hover p{
+    /* height: 0; */
+    display: none;
 }
 #p5-c-child button {
     padding: .5vw 1vw;
@@ -555,17 +612,20 @@ body {
     text-transform: capitalize;
     font-size: 1vw;
     font-family: dm;
+    color:black;
 }
 #footer{
     position: relative;
     padding: .2vw 0vw;
-    padding-top: 30vw;
+    padding-top: 13vw;
     width: 100%;
     z-index: -1;
 
 }
 #foot1{
     display: flex;
+    flex-wrap: wrap;
+
     justify-content: space-between;
     padding: 1.5vw;
 }
@@ -744,10 +804,10 @@ body {
     }
     .circle{
        
-        width: 230vw;
-        transform: translateY(-50%);
-        top: 40%;
-        justify-content: flex-start;
+        width: 130vh;
+        height: 130vh;
+        top: 50%;
+        justify-content: center;
         gap: 10vw;
     }
 
@@ -763,16 +823,15 @@ body {
     .same-row{
         flex-direction: column;
     }
-    #box1{
+
+    .b1{
         width: 100%;
     }
-    #box2{
+    .b2{
         width: 100%;
         height: 50%;
     }
-    #box3{
-        height: 50vw;
-    }
+
 
     #page3 {
         padding: 6vw 4.5vw;
@@ -791,6 +850,8 @@ body {
     }
     #page3 #row1 .r1box{
         width: 100%;
+        height: 80vw;
+
     }
     
     #page3 #row1 #r1box1{
@@ -826,29 +887,190 @@ body {
         flex-direction: column;
     }
     #page4 #part1{
-    
         padding-left: 5vw;
     }
-    #page4 #part2{
-        display: flex;
-        flex-direction: column;
-        gap: 2vw;
-        padding: 3vw 0;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        margin-right: 1vw;
-        margin-left: -0vw;
-        margin-top: -50vh;
-    }
-    #page4 #part2 img{
-        position: relative;
-        width: 100%;
-        opacity: 1 !important;
-        flex-shrink: 0;
-    }
+ */
     .clip-div {
         height: 120vh;
     }
     
+    #page5 {
+        padding-left: 3vw;
+        padding-top: 15vw;
+        justify-content: flex-start;
+    }
+
+    #page5 h1 {
+        font-size: 25.5vw;
+        line-height: 20.5vw;
+    }
+
+    #page5 h1:nth-child(2) {
+        margin-left: 0vw;
+    }
+
+    #page5 h3 {
+        font-size: 6.5vw;
+        margin-bottom: 0vw;
+        margin-top: 0vw;
+    }
+
+    .p5s {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        padding-top: 10vw;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10vw;
+    }
+
+    .p5s h2 {
+        font-size: 8vw;
+        line-height: 1.2;
+    }
+
+    .p5s p {
+        width: 75%;
+        font-size: 3.3vw;
+        margin: 3vw 0;
+    }
+
+    .p5s button {
+        padding: 1.7vw 3.4vw;
+        font-size: 3vw;
+    }
+
+    #p5-c>h2 {
+        font-size: 10vw;
+        left: 25%;
+        bottom: 11.5%;
+    }
+
+    .prt {
+        width: 100%;
+        height: 30vw;
+        border-radius: 10px;
+    }
+
+    .prt h3 {
+        border-radius: 0 10px;
+        right: 0;
+        padding: 1.6vw 4vw;
+    }
+
+    .prt img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .prt2 {
+        height: 50%;
+    }
+
+    .prt1 {
+        width: 100%;
+        height: max-content;
+        border-radius: 0;
+
+    }
+
+
+    #p5-c-child {
+        gap: 3vw;
+
+    }
+
+    #p5-c-child h1 {
+        margin-top: 8vw;
+        font-size: 6vw;
+        width: 80%;
+        line-height: 1;
+    }
+
+    #p5-c-child>p {
+        font-size: 3.2vw;
+        font-family: dm;
+    }
+    #agency-box {
+        margin-top: 0vw;
+        flex-direction: column;
+        gap: 6vw;
+    }
+    .agencies {
+        width: 90vw;
+        padding: 2vw;
+    align-items: center;
+
+    }
+
+    .agencies h2 {
+        font-size: 10vw;
+
+    }
+
+    .agencies>p {
+        margin-bottom: 1vw;
+        font-size: 3vw;
+        margin-top: -1vw;
+        text-align: center;
+    }
+    #p5-c-child button {
+        padding: 2.5vw 3vw;
+        font-size: 3vw;
+    }
+    #footer{
+        padding: .2vw 4vw;
+        padding-top: 30vw;
+    
+    }
+   
+    
+    
+    #f-part1 h3{
+        padding:.4vw .1vw;
+        font-size: 8vw;
+        line-height: 9.5vw;
+    }
+
+    #f-part2{
+        flex-direction: column;
+        gap: 5vw;
+    
+    }
+    #f-part2 h4{
+        font-size: 3.5vw;
+    }
+
+    #f-part2 .f-h4{
+        flex-direction: column;
+        gap: 2vw;
+    }
+    #f-part3 h1{
+        font-size: 12.8vw;
+        line-height: 12vw;
+        margin-top: 10vw;
+    }
+    .mail{
+        flex-direction: column;
+        gap: 1vw;
+        margin-bottom: 2vw;
+    }
+    #f-part3 h4{
+        padding: .5vw;
+        font-size: 3.5vw;
+    }
+    
+    #foot2{
+        display: flex;
+        width: 100%;
+    }
+    #foot2 h1{
+        font-size: 55vw;
+    }
+    #footer>h4{
+        margin-top: 0vw;
+        font-size: 2.8vw;
+    }
 }
